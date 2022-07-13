@@ -11,13 +11,13 @@ import os.path
 orig_cwd = os.getcwd()
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 os.environ['THEANORC'] = '.theanorc_gru4rec' #Only affects the actual settings if theano was not imported before this point (by any module)
-import GRU4Rec.custom_opt
-import GRU4Rec.datatools as datatools
+import custom_opt
+import datatools as datatools
 import theano
 from theano import tensor as T
 from theano import function
 from theano.sandbox.rng_mrg import MRG_RandomStreams
-from GRU4Rec.gpu_ops import gpu_diag, gpu_searchsorted
+from gpu_ops import gpu_diag, gpu_searchsorted
 
 os.chdir(orig_cwd)
 import numpy as np

@@ -8,7 +8,7 @@ Created on Fri Nov 10 14:17:58 2017
 import theano
 from theano import tensor as T
 import numpy as np
-import GRU4Rec.custom_theano_ops as cto
+import custom_theano_ops as cto
 
 disable_custom_op = False
 

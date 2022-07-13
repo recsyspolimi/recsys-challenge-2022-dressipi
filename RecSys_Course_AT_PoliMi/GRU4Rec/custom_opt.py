@@ -2,7 +2,7 @@ import theano
 from theano import tensor, config
 from theano.gpuarray.subtensor import GpuAdvancedSubtensor1
 from theano.gpuarray.opt import register_opt, op_lifter, register_opt2
-from GRU4Rec.custom_theano_ops import GpuAdvancedSubtensor1_fast
+from custom_theano_ops import GpuAdvancedSubtensor1_fast
 
 def remove_optimization(optimizer, name, *tags):
     obj = optimizer.__db__[name].copy().pop()
