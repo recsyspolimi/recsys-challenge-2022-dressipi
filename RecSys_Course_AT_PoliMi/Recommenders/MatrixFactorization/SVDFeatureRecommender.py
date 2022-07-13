@@ -9,8 +9,8 @@ import subprocess, os, shutil
 import numpy as np
 from tqdm import tqdm
 
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
 
 
 class SVDFeature(BaseRecommender):

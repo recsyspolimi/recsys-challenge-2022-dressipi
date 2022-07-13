@@ -14,10 +14,10 @@ import sys
 import numpy as np
 from scipy import sparse
 
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender
-from DressipiChallenge.Recommenders.DataIO import DataIO
-from DressipiChallenge.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
-from DressipiChallenge.Recommenders.BaseTempFolder import BaseTempFolder
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.BaseTempFolder import BaseTempFolder
 
 def get_unique_temp_folder(input_temp_folder_path):
     """

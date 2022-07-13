@@ -4,7 +4,7 @@ import random
 
 from matplotlib import pyplot as plt
 
-from DressipiChallenge.Pipeline.utils import create_mapping, get_mapped_sessions_to_recommend, \
+from RecSys_Course_AT_PoliMi.Pipeline.utils import create_mapping, get_mapped_sessions_to_recommend, \
     get_items_to_exclude, merge_views_purchases
 
 

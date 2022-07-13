@@ -1,28 +1,24 @@
 import os
 import sys
 
-sys.path.append('/Recommenders')
+sys.path.append('../RecSys_Course_AT_PoliMi/Recommenders')
 sys.path.append('../')
 
 from skopt.space import Real, Integer, Categorical
 
-import pandas as pd
-import numpy as np
+from RecSys_Course_AT_PoliMi.Pipeline.data_extraction import get_dataframes
+from RecSys_Course_AT_PoliMi.Pipeline.matrices_creation import create_URM_GRU4Rec
+from RecSys_Course_AT_PoliMi.Pipeline.data_splitting import *
 
-from Pipeline.data_extraction import get_dataframes
-from Pipeline.matrices_creation import create_URM_GRU4Rec
-from Pipeline.utils import create_candidate_set, create_mapping
-from Pipeline.data_splitting import *
-
-from Evaluation.Evaluator import EvaluatorHoldout
-from HyperparameterTuning.SearchAbstractClass import SearchInputRecommenderArgs
-from HyperparameterTuning.SearchBayesianSkopt import SearchBayesianSkopt
-from Recommenders.DataIO import DataIO
-from Recommenders.SessionBased.GRU4RecRecommender import GRU4RecRecommender
+from RecSys_Course_AT_PoliMi.Evaluation.Evaluator import EvaluatorHoldout
+from RecSys_Course_AT_PoliMi.HyperparameterTuning.SearchAbstractClass import SearchInputRecommenderArgs
+from RecSys_Course_AT_PoliMi.HyperparameterTuning.SearchBayesianSkopt import SearchBayesianSkopt
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.Recommenders.SessionBased.GRU4RecRecommender import GRU4RecRecommender
 
 ############ DATA PREPARATION ############
 
-item_features_df, train_sessions_df, train_purchases_df, _, _ = get_dataframes()
+item_features_df, train_sessions_df, train_purchases_df, _, _ = get_dataframes(path_to_dataset='../')
 
 
 train_sessions_df.sort_values(['session_id', 'date'], inplace=True)

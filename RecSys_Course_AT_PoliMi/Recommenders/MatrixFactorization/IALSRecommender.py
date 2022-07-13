@@ -6,9 +6,9 @@ Created on 23/03/2019
 
 
 
-from DressipiChallenge.Recommenders.BaseMatrixFactorizationRecommender import BaseMatrixFactorizationRecommender
-from DressipiChallenge.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.BaseMatrixFactorizationRecommender import BaseMatrixFactorizationRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
 import numpy as np
 
 

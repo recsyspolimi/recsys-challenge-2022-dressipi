@@ -1,8 +1,8 @@
 import scipy.sparse as sps
 import numpy as np
-from DressipiChallenge.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
-from DressipiChallenge.Recommenders.KNN.ItemKNN_CFCBF_Hybrid_Recommender import ItemKNN_CFCBF_Hybrid_Recommender
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.ItemKNN_CFCBF_Hybrid_Recommender import ItemKNN_CFCBF_Hybrid_Recommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender
 
 
 class P3alpha_ItemKNNCFCBF_ScoreHybridRecommender(BaseRecommender):

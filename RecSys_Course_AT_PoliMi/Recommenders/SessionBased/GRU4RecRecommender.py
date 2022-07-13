@@ -6,8 +6,8 @@ from random import sample
 import time
 from tqdm import tqdm
 
-from DressipiChallenge.GRU4Rec.gru4rec import GRU4Rec
-from DressipiChallenge.GRU4Rec.evaluation import *
+from RecSys_Course_AT_PoliMi.GRU4Rec.gru4rec import GRU4Rec
+from RecSys_Course_AT_PoliMi.GRU4Rec.evaluation import *
 
 
 class GRU4RecRecommender:

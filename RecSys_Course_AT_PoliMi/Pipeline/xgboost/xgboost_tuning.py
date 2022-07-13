@@ -7,8 +7,8 @@ import xgboost as xgb
 import joblib as jl
 from datetime import datetime
 
-from DressipiChallenge.Pipeline.optuna_utils import suggest, Categorical, Integer, Real, Range, Space
-from DressipiChallenge.Pipeline.telegram_utils import telegram_bot_sendfile, telegram_bot_sendtext
+from RecSys_Course_AT_PoliMi.Pipeline.optuna_utils import suggest, Categorical, Integer, Real, Range, Space
+from RecSys_Course_AT_PoliMi.Pipeline.telegram_utils import telegram_bot_sendfile, telegram_bot_sendtext
 
 
 def XGB_hypertune(

@@ -6,8 +6,8 @@ Created on 16/09/2017
 @author: Maurizio Ferrari Dacrema
 """
 
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender as _BaseRecommender
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender as _BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
 import numpy as np
 
 

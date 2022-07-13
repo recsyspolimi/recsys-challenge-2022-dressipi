@@ -12,9 +12,9 @@ import pandas as pd
 import numpy as np
 import time, os
 from skopt.space import Real, Integer, Categorical
-from DressipiChallenge.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
+from RecSys_Course_AT_PoliMi.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
 
-from DressipiChallenge.HyperparameterTuning.SearchAbstractClass_CrossValidation import SearchAbstractClass_CrossValidation
+from RecSys_Course_AT_PoliMi.HyperparameterTuning.SearchAbstractClass_CrossValidation import SearchAbstractClass_CrossValidation
 import traceback
 
 

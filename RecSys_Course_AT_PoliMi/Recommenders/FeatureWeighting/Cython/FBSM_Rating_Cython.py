@@ -5,15 +5,15 @@ Created on 03/02/2018
 """
 
 
-from Recommenders.Similarity.Compute_Similarity import Compute_Similarity
-from Recommenders.DataIO import DataIO
-from Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
-from Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
-from Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
-from Recommenders.Recommender_utils import check_matrix
-from Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
+from RecSys_Course_AT_PoliMi.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
 
-from CythonCompiler.run_compile_subprocess import run_compile_subprocess
+from RecSys_Course_AT_PoliMi.CythonCompiler.run_compile_subprocess import run_compile_subprocess
 
 import scipy.sparse as sps
 import sys, time
@@ -58,7 +58,7 @@ class FBSM_Rating_Cython(BaseItemCBFRecommender, BaseItemSimilarityMatrixRecomme
         if initialization_mode_D not in self.INIT_TYPE_VALUES:
            raise ValueError("Value for 'initialization_mode_D' not recognized. Acceptable values are {}, provided was '{}'".format(self.INIT_TYPE_VALUES, initialization_mode_D))
 
-        from FeatureWeighting.Cython.FBSM_Rating_Cython_SGD import FBSM_Rating_Cython_SGD
+        from RecSys_Course_AT_PoliMi.Recommenders.FeatureWeighting.Cython.FBSM_Rating_Cython_SGD import FBSM_Rating_Cython_SGD
 
         self.n_factors = n_factors
         self.learning_rate = learning_rate

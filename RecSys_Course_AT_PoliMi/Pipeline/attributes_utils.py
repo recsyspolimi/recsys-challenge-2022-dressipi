@@ -8,7 +8,7 @@ import tensorflow as tf
 from tensorflow import keras
 import keras.backend as K
 
-from DressipiChallenge.Pipeline.data_extraction import get_dataframes
+from RecSys_Course_AT_PoliMi.Pipeline.data_extraction import get_dataframes
 
 tqdm.pandas()
 

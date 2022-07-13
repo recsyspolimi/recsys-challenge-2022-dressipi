@@ -1,15 +1,15 @@
 import sys
 
-sys.path.append('..')
-sys.path.append('/Dataset')
+sys.path.append('../')
 
-from Pipeline.recommender_tuning import hypertune
-from Pipeline.data_extraction import get_dataframes
-from Pipeline.matrices_creation import get_URM_split_val
-from Recommenders.Neural.RecVAERecommender import RecVAERecommender
-from Pipeline.optuna_utils import Integer, Real, Categorical
+from RecSys_Course_AT_PoliMi.Pipeline.recommender_tuning import hypertune
+from RecSys_Course_AT_PoliMi.Pipeline.data_extraction import get_dataframes
+from RecSys_Course_AT_PoliMi.Pipeline.matrices_creation import get_URM_split_val
+from RecSys_Course_AT_PoliMi.Recommenders.Neural.RecVAERecommender import RecVAERecommender
+from RecSys_Course_AT_PoliMi.Pipeline.optuna_utils import Integer, Real, Categorical
 
-item_features_df, train_sessions_df, train_purchases_df, test_sessions_df, candidate_items_df = get_dataframes()
+item_features_df, train_sessions_df, train_purchases_df, \
+test_sessions_df, candidate_items_df = get_dataframes(path_to_dataset='../')
 
 URM_train, URM_val_views, URM_val_purch, mapped_items_to_ignore, mapped_val_sessions_arr, val_session_mapping, item_mapping = get_URM_split_val(
     item_features_df=item_features_df,

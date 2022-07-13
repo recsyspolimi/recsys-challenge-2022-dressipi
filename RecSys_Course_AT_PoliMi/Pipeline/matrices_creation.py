@@ -1,7 +1,7 @@
 import numpy as np
 import scipy.sparse as sp
 
-from DressipiChallenge.Pipeline.data_splitting import split_dataframes_val, split_dataframes_test
+from RecSys_Course_AT_PoliMi.Pipeline.data_splitting import split_dataframes_val, split_dataframes_test
 
 
 def create_URM(df, session_mapping, item_mapping):

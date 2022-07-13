@@ -4,9 +4,9 @@ import xgboost as xgb
 import numpy as np
 import pandas as pd
 
-from DressipiChallenge.Pipeline.submission import create_submission
-from DressipiChallenge.Pipeline.xgboost.xgboost_tuning import XGB_hypertune
-from DressipiChallenge.Pipeline.gradient_boosting_utils import GB_process_train_dataset, \
+from RecSys_Course_AT_PoliMi.Pipeline.submission import create_submission
+from RecSys_Course_AT_PoliMi.Pipeline.xgboost.xgboost_tuning import XGB_hypertune
+from RecSys_Course_AT_PoliMi.Pipeline.gradient_boosting_utils import GB_process_train_dataset, \
     remove_useless_cols, print_MRR_score, GB_process_inference_dataset, GB_rerank_candidates, get_features_to_drop, \
     GB_integrate_pathological
 

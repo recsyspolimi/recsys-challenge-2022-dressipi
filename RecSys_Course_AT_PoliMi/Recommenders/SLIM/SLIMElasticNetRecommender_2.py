@@ -6,9 +6,9 @@
 
 import numpy as np
 import scipy.sparse as sps
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
 from sklearn.linear_model import ElasticNet
-from DressipiChallenge.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
 from tqdm import tqdm
 from sklearn.utils._testing import ignore_warnings
 from sklearn.exceptions import ConvergenceWarning

@@ -1,9 +1,9 @@
 import scipy.sparse as sps
 import numpy as np
 
-from DressipiChallenge.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
-from DressipiChallenge.Recommenders.SLIM.SLIMBPRRecommender import SLIMBPRRecommender
-from DressipiChallenge.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.SLIM.SLIMBPRRecommender import SLIMBPRRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
 
 
 class SLIMBPR_P3alpha_SimilarityHybridRecommender(BaseItemSimilarityMatrixRecommender):

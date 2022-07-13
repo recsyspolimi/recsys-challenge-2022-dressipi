@@ -1,8 +1,8 @@
 import scipy.sparse as sps
 import numpy as np
-from DressipiChallenge.Recommenders.SLIM.SLIMElasticNetRecommender_2 import MultiThread_SLIMElasticNetRecommender
-from DressipiChallenge.Recommenders.KNN.ItemKNN_CFCBF_Hybrid_Recommender import ItemKNN_CFCBF_Hybrid_Recommender
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.SLIM.SLIMElasticNetRecommender_2 import MultiThread_SLIMElasticNetRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.ItemKNN_CFCBF_Hybrid_Recommender import ItemKNN_CFCBF_Hybrid_Recommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender
 
 
 class SLIMEN_ItemKNNCFCBF_ScoreHybridRecommender(BaseRecommender):

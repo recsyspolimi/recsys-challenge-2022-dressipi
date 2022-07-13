@@ -6,9 +6,9 @@ import scipy.sparse as sp
 from tqdm.auto import tqdm
 import time
 
-from DressipiChallenge.Evaluation.Evaluator import EvaluatorHoldout
-from DressipiChallenge.Evaluation.metrics import MRR
-from DressipiChallenge.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
+from RecSys_Course_AT_PoliMi.Evaluation.Evaluator import EvaluatorHoldout
+from RecSys_Course_AT_PoliMi.Evaluation.metrics import MRR
+from RecSys_Course_AT_PoliMi.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
 
 tqdm.pandas()
 

@@ -10,8 +10,8 @@ import numpy as np
 import scipy.sparse as sps
 import warnings
 
-from DressipiChallenge.Recommenders.Similarity.Compute_Similarity_Python import Compute_Similarity_Python
-from DressipiChallenge.Recommenders.Similarity.Compute_Similarity_Euclidean import Compute_Similarity_Euclidean
+from RecSys_Course_AT_PoliMi.Recommenders.Similarity.Compute_Similarity_Python import Compute_Similarity_Python
+from RecSys_Course_AT_PoliMi.Recommenders.Similarity.Compute_Similarity_Euclidean import Compute_Similarity_Euclidean
 
 
 from enum import Enum

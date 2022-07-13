@@ -1,6 +1,6 @@
 import numpy as np
 
-from DressipiChallenge.Recommenders.GraphBased.RP3betaRecommender import RP3betaRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.RP3betaRecommender import RP3betaRecommender
 import scipy.sparse as sps
 
 

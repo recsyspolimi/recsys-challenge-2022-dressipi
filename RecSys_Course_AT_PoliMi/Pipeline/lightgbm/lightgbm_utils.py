@@ -3,9 +3,9 @@ import os
 import lightgbm as lgb
 import pandas as pd
 
-from DressipiChallenge.Pipeline.submission import create_submission
-from DressipiChallenge.Pipeline.lightgbm.lightgbm_tuning import LGB_hypertune
-from DressipiChallenge.Pipeline.gradient_boosting_utils import GB_process_inference_dataset, print_MRR_score, \
+from RecSys_Course_AT_PoliMi.Pipeline.submission import create_submission
+from RecSys_Course_AT_PoliMi.Pipeline.lightgbm.lightgbm_tuning import LGB_hypertune
+from RecSys_Course_AT_PoliMi.Pipeline.gradient_boosting_utils import GB_process_inference_dataset, print_MRR_score, \
     remove_useless_cols, GB_process_train_dataset, GB_rerank_candidates, get_features_to_drop, GB_integrate_pathological
 
 

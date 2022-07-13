@@ -8,8 +8,8 @@ Created on 06/07/2018
 
 import time, sys
 import numpy as np
-from DressipiChallenge.Recommenders.BaseTempFolder import BaseTempFolder
-from DressipiChallenge.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
+from RecSys_Course_AT_PoliMi.Recommenders.BaseTempFolder import BaseTempFolder
+from RecSys_Course_AT_PoliMi.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
 
 
 class Incremental_Training_Early_Stopping(object):

@@ -6,8 +6,8 @@ Created on 14/06/18
 @author: Maurizio Ferrari Dacrema
 """
 
-from DressipiChallenge.Recommenders.BaseMatrixFactorizationRecommender import BaseMatrixFactorizationRecommender
-from DressipiChallenge.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
+from RecSys_Course_AT_PoliMi.Recommenders.BaseMatrixFactorizationRecommender import BaseMatrixFactorizationRecommender
+from RecSys_Course_AT_PoliMi.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
 from sklearn.decomposition import NMF
 import time
 

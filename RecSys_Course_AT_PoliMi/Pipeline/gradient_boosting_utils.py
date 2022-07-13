@@ -6,10 +6,10 @@ from scipy.stats import pearsonr
 from sklearn.model_selection import GroupShuffleSplit
 from tqdm.auto import tqdm
 
-from DressipiChallenge.Pipeline.data_splitting import split_dataframes_val, split_dataframes_test
-from DressipiChallenge.Pipeline.matrices_creation import create_ICM, create_csr_matrix
-from DressipiChallenge.Pipeline.submission import create_submission
-from DressipiChallenge.Pipeline.utils import batch_compute_item_score, compute_MRR, generate_predictions, flat_list, \
+from RecSys_Course_AT_PoliMi.Pipeline.data_splitting import split_dataframes_val, split_dataframes_test
+from RecSys_Course_AT_PoliMi.Pipeline.matrices_creation import create_ICM, create_csr_matrix
+from RecSys_Course_AT_PoliMi.Pipeline.submission import create_submission
+from RecSys_Course_AT_PoliMi.Pipeline.utils import batch_compute_item_score, compute_MRR, generate_predictions, flat_list, \
     count_saved_files, concatenate_predictions
 
 tqdm.pandas()

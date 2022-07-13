@@ -6,15 +6,15 @@ Created on 23/10/17
 @author: Maurizio Ferrari Dacrema
 """
 
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
-from DressipiChallenge.Recommenders.BaseSimilarityMatrixRecommender import BaseUserSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseUserSimilarityMatrixRecommender
 
-from DressipiChallenge.Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
+from RecSys_Course_AT_PoliMi.Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
 import numpy as np
 import scipy.sparse as sps
-from DressipiChallenge.Utils.set_zeros import set_zeros_row_col
+from RecSys_Course_AT_PoliMi.Utils.set_zeros import set_zeros_row_col
 
-from DressipiChallenge.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
+from RecSys_Course_AT_PoliMi.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
 
 
 class UserKNNCFRecommender(BaseUserSimilarityMatrixRecommender):

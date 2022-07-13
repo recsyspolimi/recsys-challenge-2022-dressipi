@@ -12,9 +12,9 @@ import time, sys, copy
 import pandas as pd
 
 from enum import Enum
-from DressipiChallenge.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
+from RecSys_Course_AT_PoliMi.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
 
-from DressipiChallenge.Evaluation.metrics import precision, precision_recall_min_denominator, recall, MAP, MAP_MIN_DEN, \
+from RecSys_Course_AT_PoliMi.Evaluation.metrics import precision, precision_recall_min_denominator, recall, MAP, MAP_MIN_DEN, \
     MRR, HIT_RATE, ndcg, arhr_all_hits, \
     Novelty, Coverage_Item, Coverage_Item_Correct, _Metrics_Object, Coverage_User, Coverage_User_Correct, \
     Gini_Diversity, Shannon_Entropy, Diversity_MeanInterList, \

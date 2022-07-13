@@ -6,13 +6,13 @@ Created on 07/09/17
 @author: Maurizio Ferrari Dacrema
 """
 
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
-from DressipiChallenge.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
-from DressipiChallenge.Recommenders.Recommender_utils import similarityMatrixTopK
-from DressipiChallenge.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import similarityMatrixTopK
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
 
 
-from DressipiChallenge.CythonCompiler.run_compile_subprocess import run_compile_subprocess
+from RecSys_Course_AT_PoliMi.CythonCompiler.run_compile_subprocess import run_compile_subprocess
 import os, sys
 
 
@@ -76,7 +76,7 @@ class SLIM_BPR_Cython(BaseItemSimilarityMatrixRecommender, Incremental_Training_
 
 
         # Import compiled module
-        from DressipiChallenge.Recommenders.SLIM.Cython.SLIM_BPR_Cython_Epoch import SLIM_BPR_Cython_Epoch
+        from RecSys_Course_AT_PoliMi.Recommenders.SLIM.Cython.SLIM_BPR_Cython_Epoch import SLIM_BPR_Cython_Epoch
 
 
 

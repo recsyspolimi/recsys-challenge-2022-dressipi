@@ -6,14 +6,14 @@ Created on 13/03/19
 @author: Simone Boglio
 """
 
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
-from DressipiChallenge.Recommenders.BaseCBFRecommender import BaseUserCBFRecommender
-from DressipiChallenge.Recommenders.BaseSimilarityMatrixRecommender import BaseUserSimilarityMatrixRecommender
-from DressipiChallenge.Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
-from DressipiChallenge.Utils.set_zeros import set_zeros_row_col
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.BaseCBFRecommender import BaseUserCBFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseUserSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
+from RecSys_Course_AT_PoliMi.Utils.set_zeros import set_zeros_row_col
 import numpy as np
 from scipy import sparse as sps
-from DressipiChallenge.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
+from RecSys_Course_AT_PoliMi.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
 
 
 class UserKNNCBFRecommender(BaseUserCBFRecommender, BaseUserSimilarityMatrixRecommender):

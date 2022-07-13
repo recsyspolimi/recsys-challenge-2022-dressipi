@@ -9,16 +9,16 @@ Created on 10/2017
 import sys, time
 import numpy as np
 import scipy.sparse as sps
-from Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
 
-from Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
-from Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
-from Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
-from Recommenders.Recommender_utils import check_matrix
-from Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
-from Recommenders.Similarity.Compute_Similarity import Compute_Similarity
+from RecSys_Course_AT_PoliMi.Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.IR_feature_weighting import okapi_BM_25, TF_IDF
+from RecSys_Course_AT_PoliMi.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
 
-from CythonCompiler.run_compile_subprocess import run_compile_subprocess
+from RecSys_Course_AT_PoliMi.CythonCompiler.run_compile_subprocess import run_compile_subprocess
 
 
 class CFW_DVV_Similarity_Cython(BaseItemCBFRecommender, BaseItemSimilarityMatrixRecommender, Incremental_Training_Early_Stopping):
@@ -52,7 +52,7 @@ class CFW_DVV_Similarity_Cython(BaseItemCBFRecommender, BaseItemSimilarityMatrix
             sgd_mode='adagrad', gamma = 0.9, beta_1=0.9, beta_2=0.999,
             **earlystopping_kwargs):
 
-        from FeatureWeighting.Cython.CFW_DVV_Similarity_Cython_SGD import CFW_DVV_Similarity_Cython_SGD
+        from RecSys_Course_AT_PoliMi.Recommenders.FeatureWeighting.Cython.CFW_DVV_Similarity_Cython_SGD import CFW_DVV_Similarity_Cython_SGD
 
         if initialization_mode_D not in self.INIT_TYPE_VALUES:
            raise ValueError("Value for 'initialization_mode_D' not recognized. Acceptable values are {}, provided was '{}'".format(self.INIT_TYPE_VALUES, initialization_mode_D))

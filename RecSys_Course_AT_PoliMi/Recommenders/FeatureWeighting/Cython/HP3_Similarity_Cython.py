@@ -6,12 +6,12 @@ Created on 08/09/17
 @author: Maurizio Ferrari Dacrema
 """
 
-from Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
-from Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
-from Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
-from Recommenders.Recommender_utils import check_matrix
-from Recommenders.DataIO import DataIO
-from CythonCompiler.run_compile_subprocess import run_compile_subprocess
+from RecSys_Course_AT_PoliMi.Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.CythonCompiler.run_compile_subprocess import run_compile_subprocess
 
 import time, sys
 import numpy as np
@@ -77,7 +77,7 @@ class HP3_Similarity_Cython(BaseItemCBFRecommender, BaseItemSimilarityMatrixReco
             print(self.RECOMMENDER_NAME + ": Invalid init value, using default (" + str(self.INIT_VALUE) + ")")
 
         # Import compiled module
-        from FeatureWeighting.Cython.HP3_Similarity_Cython_SGD import HP3_Similarity_Cython_SGD
+        from RecSys_Course_AT_PoliMi.Recommenders.FeatureWeighting.Cython.HP3_Similarity_Cython_SGD import HP3_Similarity_Cython_SGD
 
         self.log_file = log_file
         self.show_max_performance = show_max_performance

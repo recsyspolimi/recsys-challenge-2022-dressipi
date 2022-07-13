@@ -6,11 +6,11 @@ import numpy as np
 import scipy.sparse as sps
 from datetime import datetime 
 import os
-from DressipiChallenge.Pipeline.telegram_utils import telegram_bot_sendfile, telegram_bot_sendtext
-from DressipiChallenge.Pipeline.optuna_utils import Range, Categorical, Integer, Real, Space, suggest
-from DressipiChallenge.Pipeline.utils import single_train_test_model
-from DressipiChallenge.Pipeline.matrices_creation import get_URM_split_val
-from DressipiChallenge.Pipeline.data_extraction import get_dataframes
+from RecSys_Course_AT_PoliMi.Pipeline.telegram_utils import telegram_bot_sendfile, telegram_bot_sendtext
+from RecSys_Course_AT_PoliMi.Pipeline.optuna_utils import Range, Categorical, Integer, Real, Space, suggest
+from RecSys_Course_AT_PoliMi.Pipeline.utils import single_train_test_model
+from RecSys_Course_AT_PoliMi.Pipeline.matrices_creation import get_URM_split_val
+from RecSys_Course_AT_PoliMi.Pipeline.data_extraction import get_dataframes
 
 def hypertune (
     URM_train, URM_val_views, URM_val_purch, item_mapping, mapped_items_to_ignore,

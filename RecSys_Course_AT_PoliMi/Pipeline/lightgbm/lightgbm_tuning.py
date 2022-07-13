@@ -6,8 +6,8 @@ import joblib as jl
 import pandas as pd
 from datetime import datetime
 
-from DressipiChallenge.Pipeline.optuna_utils import suggest, Categorical, Integer, Real, Range, Space
-from DressipiChallenge.Pipeline.telegram_utils import telegram_bot_sendtext, telegram_bot_sendfile
+from RecSys_Course_AT_PoliMi.Pipeline.optuna_utils import suggest, Categorical, Integer, Real, Range, Space
+from RecSys_Course_AT_PoliMi.Pipeline.telegram_utils import telegram_bot_sendtext, telegram_bot_sendfile
 
 
 def LGB_hypertune(

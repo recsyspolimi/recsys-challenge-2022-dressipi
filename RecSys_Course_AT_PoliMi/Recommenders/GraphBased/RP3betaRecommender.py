@@ -8,10 +8,10 @@ import numpy as np
 import scipy.sparse as sps
 
 from sklearn.preprocessing import normalize
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix, similarityMatrixTopK
-from DressipiChallenge.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix, similarityMatrixTopK
+from RecSys_Course_AT_PoliMi.Utils.seconds_to_biggest_unit import seconds_to_biggest_unit
 
-from DressipiChallenge.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
 import time, sys
 
 class RP3betaRecommender(BaseItemSimilarityMatrixRecommender):

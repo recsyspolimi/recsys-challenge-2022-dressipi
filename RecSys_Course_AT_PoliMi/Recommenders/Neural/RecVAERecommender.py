@@ -20,10 +20,10 @@ from copy import deepcopy
 from torch import nn
 from torch.nn import functional as F
 
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender
-from DressipiChallenge.Recommenders.BaseTempFolder import BaseTempFolder
-from DressipiChallenge.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
-from DressipiChallenge.Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseTempFolder import BaseTempFolder
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
 
 
 def get_unique_temp_folder(input_temp_folder_path):

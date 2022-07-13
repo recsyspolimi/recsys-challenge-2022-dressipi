@@ -15,36 +15,36 @@ from functools import partial
 ##########                  PURE COLLABORATIVE              ##########
 ##########                                                  ##########
 ######################################################################
-from DressipiChallenge.Recommenders.NonPersonalizedRecommender import TopPop, Random, GlobalEffects
+from RecSys_Course_AT_PoliMi.Recommenders.NonPersonalizedRecommender import TopPop, Random, GlobalEffects
 
 # KNN
-from DressipiChallenge.Recommenders.KNN.UserKNNCFRecommender import UserKNNCFRecommender
-from DressipiChallenge.Recommenders.KNN.ItemKNNCFRecommender import ItemKNNCFRecommender
-from DressipiChallenge.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
-from DressipiChallenge.Recommenders.GraphBased.RP3betaRecommender import RP3betaRecommender
-from DressipiChallenge.Recommenders.EASE_R.EASE_R_Recommender import EASE_R_Recommender
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.UserKNNCFRecommender import UserKNNCFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.ItemKNNCFRecommender import ItemKNNCFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.RP3betaRecommender import RP3betaRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.EASE_R.EASE_R_Recommender import EASE_R_Recommender
 
 # KNN machine learning
-from DressipiChallenge.Recommenders.SLIM.Cython.SLIM_BPR_Cython import SLIM_BPR_Cython
-from DressipiChallenge.Recommenders.SLIM.SLIMElasticNetRecommender import SLIMElasticNetRecommender, MultiThreadSLIM_SLIMElasticNetRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.SLIM.Cython.SLIM_BPR_Cython import SLIM_BPR_Cython
+from RecSys_Course_AT_PoliMi.Recommenders.SLIM.SLIMElasticNetRecommender import SLIMElasticNetRecommender, MultiThreadSLIM_SLIMElasticNetRecommender
 
 # Matrix Factorization
-from DressipiChallenge.Recommenders.MatrixFactorization.PureSVDRecommender import PureSVDRecommender, PureSVDItemRecommender
-from DressipiChallenge.Recommenders.MatrixFactorization.IALSRecommender import IALSRecommender
-from DressipiChallenge.Recommenders.MatrixFactorization.NMFRecommender import NMFRecommender
-from DressipiChallenge.Recommenders.MatrixFactorization.Cython.MatrixFactorization_Cython import MatrixFactorization_BPR_Cython,\
+from RecSys_Course_AT_PoliMi.Recommenders.MatrixFactorization.PureSVDRecommender import PureSVDRecommender, PureSVDItemRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.MatrixFactorization.IALSRecommender import IALSRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.MatrixFactorization.NMFRecommender import NMFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.MatrixFactorization.Cython.MatrixFactorization_Cython import MatrixFactorization_BPR_Cython,\
     MatrixFactorization_FunkSVD_Cython, MatrixFactorization_AsySVD_Cython
 
-from DressipiChallenge.Recommenders.Neural.MultVAERecommender import MultVAERecommender_OptimizerMask as MultVAERecommender
-from DressipiChallenge.Recommenders.FactorizationMachines.LightFMRecommender import LightFMCFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Neural.MultVAERecommender import MultVAERecommender_OptimizerMask as MultVAERecommender
+from RecSys_Course_AT_PoliMi.Recommenders.FactorizationMachines.LightFMRecommender import LightFMCFRecommender
 
 ######################################################################
 ##########                                                  ##########
 ##########                  PURE CONTENT BASED              ##########
 ##########                                                  ##########
 ######################################################################
-from DressipiChallenge.Recommenders.KNN.ItemKNNCBFRecommender import ItemKNNCBFRecommender
-from DressipiChallenge.Recommenders.KNN.UserKNNCBFRecommender import UserKNNCBFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.ItemKNNCBFRecommender import ItemKNNCBFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.UserKNNCBFRecommender import UserKNNCBFRecommender
 
 
 
@@ -53,20 +53,20 @@ from DressipiChallenge.Recommenders.KNN.UserKNNCBFRecommender import UserKNNCBFR
 ##########                       HYBRID                     ##########
 ##########                                                  ##########
 ######################################################################
-from DressipiChallenge.Recommenders.KNN.ItemKNN_CFCBF_Hybrid_Recommender import ItemKNN_CFCBF_Hybrid_Recommender
-from DressipiChallenge.Recommenders.KNN.UserKNN_CFCBF_Hybrid_Recommender import UserKNN_CFCBF_Hybrid_Recommender
-from DressipiChallenge.Recommenders.FactorizationMachines.LightFMRecommender import LightFMItemHybridRecommender, LightFMUserHybridRecommender
-from DressipiChallenge.Recommenders.FeatureWeighting.Cython.CFW_D_Similarity_Cython import CFW_D_Similarity_Cython
-from DressipiChallenge.Recommenders.FeatureWeighting.Cython.CFW_DVV_Similarity_Cython import CFW_DVV_Similarity_Cython
-from DressipiChallenge.Recommenders.FeatureWeighting.Cython.FBSM_Rating_Cython import FBSM_Rating_Cython
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.ItemKNN_CFCBF_Hybrid_Recommender import ItemKNN_CFCBF_Hybrid_Recommender
+from RecSys_Course_AT_PoliMi.Recommenders.KNN.UserKNN_CFCBF_Hybrid_Recommender import UserKNN_CFCBF_Hybrid_Recommender
+from RecSys_Course_AT_PoliMi.Recommenders.FactorizationMachines.LightFMRecommender import LightFMItemHybridRecommender, LightFMUserHybridRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.FeatureWeighting.Cython.CFW_D_Similarity_Cython import CFW_D_Similarity_Cython
+from RecSys_Course_AT_PoliMi.Recommenders.FeatureWeighting.Cython.CFW_DVV_Similarity_Cython import CFW_DVV_Similarity_Cython
+from RecSys_Course_AT_PoliMi.Recommenders.FeatureWeighting.Cython.FBSM_Rating_Cython import FBSM_Rating_Cython
 
 ######################################################################
 from skopt.space import Real, Integer, Categorical
 import traceback
 
-from DressipiChallenge.HyperparameterTuning.SearchBayesianSkopt import SearchBayesianSkopt
-from DressipiChallenge.HyperparameterTuning.SearchSingleCase import SearchSingleCase
-from DressipiChallenge.HyperparameterTuning.SearchAbstractClass import SearchInputRecommenderArgs
+from RecSys_Course_AT_PoliMi.HyperparameterTuning.SearchBayesianSkopt import SearchBayesianSkopt
+from RecSys_Course_AT_PoliMi.HyperparameterTuning.SearchSingleCase import SearchSingleCase
+from RecSys_Course_AT_PoliMi.HyperparameterTuning.SearchAbstractClass import SearchInputRecommenderArgs
 
 ######################################################################
 
@@ -1131,7 +1131,7 @@ def read_data_split_and_search():
 
 
 
-    from Evaluation.Evaluator import EvaluatorHoldout
+    from RecSys_Course_AT_PoliMi.Evaluation.Evaluator import EvaluatorHoldout
 
     evaluator_validation = EvaluatorHoldout(URM_validation, cutoff_list=[5])
     evaluator_test = EvaluatorHoldout(URM_test, cutoff_list=[5, 10])

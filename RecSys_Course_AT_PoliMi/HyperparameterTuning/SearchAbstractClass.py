@@ -8,10 +8,10 @@ Created on 10/03/2018
 
 import time, os, traceback
 import pandas as pd
-from DressipiChallenge.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
 import numpy as np
-from DressipiChallenge.Recommenders.DataIO import DataIO
-from DressipiChallenge.Evaluation.Evaluator import get_result_string_df
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.Evaluation.Evaluator import get_result_string_df
 
 
 

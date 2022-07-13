@@ -1,8 +1,8 @@
 import scipy.sparse as sps
 import numpy as np
-from DressipiChallenge.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
-from DressipiChallenge.Recommenders.EASE_R.EASE_R_Recommender import EASE_R_Recommender
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.EASE_R.EASE_R_Recommender import EASE_R_Recommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender
 
 
 class EASE_R_P3alpha_ScoreHybridRecommender(BaseRecommender):

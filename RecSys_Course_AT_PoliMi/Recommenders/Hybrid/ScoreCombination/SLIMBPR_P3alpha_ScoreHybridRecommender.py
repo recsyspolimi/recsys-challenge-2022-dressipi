@@ -1,8 +1,8 @@
 import scipy.sparse as sps
 import numpy as np
-from DressipiChallenge.Recommenders.SLIM.SLIMBPRRecommender import SLIMBPRRecommender
-from DressipiChallenge.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
-from DressipiChallenge.Recommenders.BaseRecommender import BaseRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.SLIM.SLIMBPRRecommender import SLIMBPRRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.P3alphaRecommender import P3alphaRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseRecommender import BaseRecommender
 
 
 class SLIMBPR_P3alpha_ScoreHybridRecommender(BaseRecommender):

@@ -7,11 +7,11 @@ Created on 07/09/17
 """
 
 
-from Recommenders.BaseMatrixFactorizationRecommender import BaseMatrixFactorizationRecommender
-from Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
-from Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.BaseMatrixFactorizationRecommender import BaseMatrixFactorizationRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Incremental_Training_Early_Stopping import Incremental_Training_Early_Stopping
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
 
-from CythonCompiler.run_compile_subprocess import run_compile_subprocess
+from RecSys_Course_AT_PoliMi.CythonCompiler.run_compile_subprocess import run_compile_subprocess
 import sys
 import numpy as np
 
@@ -61,7 +61,7 @@ class _MatrixFactorization_Cython(BaseMatrixFactorizationRecommender, Incrementa
         self.negative_interactions_quota = negative_interactions_quota
 
         # Import compiled module
-        from Recommenders.MatrixFactorization.Cython.MatrixFactorizationImpressions_Cython_Epoch import MatrixFactorization_Cython_Epoch
+        from RecSys_Course_AT_PoliMi.Recommenders.MatrixFactorization.Cython.MatrixFactorizationImpressions_Cython_Epoch import MatrixFactorization_Cython_Epoch
 
 
         if self.algorithm_name in ["FUNK_SVD", "ASY_SVD"]:

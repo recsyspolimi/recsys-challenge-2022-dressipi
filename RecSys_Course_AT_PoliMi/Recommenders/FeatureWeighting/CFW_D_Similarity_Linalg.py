@@ -6,14 +6,14 @@ Created on 08/09/17
 @author: Maurizio Ferrari Dacrema
 """
 
-from DressipiChallenge.Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
-from DressipiChallenge.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
-from DressipiChallenge.Recommenders.Recommender_utils import check_matrix
-from DressipiChallenge.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
+from RecSys_Course_AT_PoliMi.Recommenders.BaseCBFRecommender import BaseItemCBFRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.BaseSimilarityMatrixRecommender import BaseItemSimilarityMatrixRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.Recommender_utils import check_matrix
+from RecSys_Course_AT_PoliMi.Recommenders.Similarity.Compute_Similarity import Compute_Similarity
 from scipy.sparse import linalg
 import time, sys
 import numpy as np
-from DressipiChallenge.Recommenders.DataIO import DataIO
+from RecSys_Course_AT_PoliMi.Recommenders.DataIO import DataIO
 
 
 
