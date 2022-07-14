@@ -25,6 +25,11 @@ item_features_df, train_sessions_df, train_purchases_df, test_sessions_df, candi
 # ATTRIBUTES LOADING
 session_attributes_train_df, session_attributes_test_df, item_attributes_df = load_attributes()
 
+# DEFAULT PARAMETERS
+num_candidates_per_model = 60
+min_num_nonzero_candidates = None
+keep_unpredicted = False
+
 # SETUP
 model_classes = [EASE_R_Recommender, TopPop, GRU4RecRecommender, ItemKNN_CFCBF_Hybrid_Recommender,
                  UserKNNCFRecommenderStackedXGBoost, RecVAERecommender, MultVAERecommender_OptimizerMask]
@@ -68,7 +73,10 @@ lgb_model, _ = LGB_tune_test(
     model_dict=model_dict,
     num_trials=200,
     num_folds=5,
-    num_boost_round=1500
+    num_boost_round=1500,
+    num_candidates_per_model=num_candidates_per_model,
+    min_num_nonzero_candidates=min_num_nonzero_candidates,
+    keep_unpredicted=keep_unpredicted
 )
 
 # INFERENCE
@@ -82,6 +90,8 @@ prediction_df = LGB_test_submission(
     item_attributes_df=item_attributes_df.copy(),
     lgb_model=lgb_model,
     model_dict=model_dict,
+    num_candidates_per_model=num_candidates_per_model,
+    min_num_nonzero_candidates=min_num_nonzero_candidates,
 )
 
 # CHECK IF SUBMISSION_DF IS WELL-CONSTRUCTED
