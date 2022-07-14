@@ -75,16 +75,13 @@ def integrate_predictions(reranked_df, fitted_rec_for_integration, test_sessions
     return concatenate_predictions([reranked_df, to_integrate_df])
 
 
-def rename_columns(df, models):
-    i = 0
+def remove_unpredicted_sessions(true_candidates_df):
+    df = true_candidates_df.groupby('session_id').max()
+    df = df[df.target == 1]
+    filtered_df = true_candidates_df[true_candidates_df['session_id'].isin(df.index.values)]
+    filtered_df.drop(columns=['is_fake'], inplace=True)
 
-    for column in df.columns:
-        if not (column in ['session_id', 'item_id', 'target', 'is_fake']):
-            df.rename(
-                columns={column: models[i].RECOMMENDER_NAME + '_score'}, inplace=True)
-            i += 1
-
-    return df
+    return filtered_df
 
 
 def _get_gb_candidates(session_ids, models, val_purchases=None, cutoff=100, is_training=False):
@@ -152,8 +149,6 @@ def _get_gb_candidates(session_ids, models, val_purchases=None, cutoff=100, is_t
             filled_df.fillna(selected_df, inplace=True)
 
             i += 1
-
-    # filled_df = rename_columns(filled_df, models)
 
     if is_training:
         return filled_df.drop(columns='is_fake'), filled_df[filled_df.is_fake == False].reset_index(drop=True)
@@ -254,7 +249,9 @@ def filter_cold_sessions(candidates_df, min_num_nonzero_candidates):
 def load_gb_train_df(
         candidates_train_df_path='./Dataset/xgb_candidates/candidates_train_df.parquet',
         true_candidates_train_df_path='./Dataset/xgb_candidates/true_candidates_train_df.parquet',
-        session_ids=None, val_purchases=None, models=None, cutoff=100, min_num_nonzero_candidates=None):
+        session_ids=None, val_purchases=None, models=None, cutoff=100,
+        min_num_nonzero_candidates=None, keep_unpredicted=False
+):
     """
     Returns a dataframe with a varying number of candidate items per session and a dataframe containing the target (1
     if the candidate is the item purchased in the session)
@@ -292,6 +289,9 @@ def load_gb_train_df(
     if min_num_nonzero_candidates is not None:
         candidates_df = filter_cold_sessions(candidates_df, min_num_nonzero_candidates)
         true_candidates_df = filter_cold_sessions(true_candidates_df, min_num_nonzero_candidates)
+
+    if not keep_unpredicted:
+        candidates_df = remove_unpredicted_sessions(true_candidates_df.copy())
 
     return candidates_df, true_candidates_df
 
@@ -352,7 +352,8 @@ def GB_process_train_dataset(
         model_dict,
         val_start_ts, val_end_ts,
         candidates_train_df_path, true_candidates_train_df_path,
-        min_num_nonzero_candidates, num_candidates_per_model=100,
+        min_num_nonzero_candidates, keep_unpredicted,
+        num_candidates_per_model=100,
         saved_model_train_path='./save/saved_model_train/'
 ):
     assert (isinstance(model_dict['URM_params'], list))
@@ -427,13 +428,15 @@ def GB_process_train_dataset(
                                                              cutoff=num_candidates_per_model,
                                                              candidates_train_df_path=candidates_train_df_path,
                                                              true_candidates_train_df_path=true_candidates_train_df_path,
-                                                             min_num_nonzero_candidates=min_num_nonzero_candidates)
+                                                             min_num_nonzero_candidates=min_num_nonzero_candidates,
+                                                             keep_unpredicted=keep_unpredicted)
     else:
         candidates_df, true_candidates_df = load_gb_train_df(session_ids=None, val_purchases=None, models=None,
                                                              cutoff=num_candidates_per_model,
                                                              candidates_train_df_path=candidates_train_df_path,
                                                              true_candidates_train_df_path=true_candidates_train_df_path,
-                                                             min_num_nonzero_candidates=min_num_nonzero_candidates)
+                                                             min_num_nonzero_candidates=min_num_nonzero_candidates,
+                                                             keep_unpredicted=keep_unpredicted)
 
     # add features
     session_attributes_train_df['session_id'] = session_attributes_train_df['session_id'].map(

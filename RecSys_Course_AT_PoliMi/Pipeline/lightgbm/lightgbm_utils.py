@@ -58,6 +58,7 @@ def LGB_tune_test(
         lgb_model_save_path="./Dataset/lgb_model/",
         reranked_df_save_path='./Dataset/xgb_candidates/lgb_reranked_df.parquet',
         min_num_nonzero_candidates=None,
+        keep_unpredicted=False,
         **hypertune_params
 ):
     # pd.options.mode.chained_assignment = None
@@ -69,7 +70,7 @@ def LGB_tune_test(
         model_dict=model_dict, num_candidates_per_model=num_candidates_per_model,
         val_start_ts=val_start_ts, val_end_ts=val_end_ts,
         candidates_train_df_path=candidates_train_df_path, true_candidates_train_df_path=true_candidates_train_df_path,
-        min_num_nonzero_candidates=min_num_nonzero_candidates,
+        min_num_nonzero_candidates=min_num_nonzero_candidates, keep_unpredicted=keep_unpredicted
     )
 
     if not os.path.exists(lgb_model_save_path):
@@ -122,6 +123,7 @@ def LGB_train_test(
         lgb_model_save_path="./Dataset/lgb_model/",
         reranked_df_save_path='./Dataset/xgb_candidates/lgb_reranked_df.parquet',
         min_num_nonzero_candidates=None,
+        keep_unpredicted=False
 ):
     # pd.options.mode.chained_assignment = None
 
@@ -132,7 +134,7 @@ def LGB_train_test(
         model_dict=model_dict, num_candidates_per_model=num_candidates_per_model,
         val_start_ts=val_start_ts, val_end_ts=val_end_ts,
         candidates_train_df_path=candidates_train_df_path, true_candidates_train_df_path=true_candidates_train_df_path,
-        min_num_nonzero_candidates=min_num_nonzero_candidates,
+        min_num_nonzero_candidates=min_num_nonzero_candidates, keep_unpredicted=keep_unpredicted
     )
 
     if not os.path.exists(lgb_model_save_path):

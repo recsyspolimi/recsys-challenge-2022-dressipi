@@ -33,6 +33,7 @@ test_candidates_df_path = "./Dataset/xgb_candidates/candidates_test_df.parquet"
 true_candidates_train_df_path = "./Dataset/xgb_candidates/true_candidates_train_df.parquet"
 num_candidates_per_model = 100
 min_num_nonzero_candidates = None
+keep_unpredicted = False
 lgb_model_save_path = "./Dataset/lgb_model/"
 reranked_df_save_path = './Dataset/lgb_model/lgb_reranked_df.parquet'
 
@@ -95,6 +96,7 @@ lgb_model, true_candidates_df, reranked_df = LGB_train_test(
     lgb_model_save_path=lgb_model_save_path,
     num_candidates_per_model=num_candidates_per_model,
     min_num_nonzero_candidates=min_num_nonzero_candidates,
+    keep_unpredicted=keep_unpredicted
 )
 
 # INFERENCE
