@@ -1,13 +1,16 @@
 import pandas as pd
 
 
-def get_dataframes(path_to_dataset='./'):
+def get_dataframes(path_to_dataset='./', final=False):
     path_to_dataset += 'Dataset'
     item_features_df = pd.read_csv(path_to_dataset + '/item_features.csv', sep=',')
     train_sessions_df = pd.read_csv(path_to_dataset + '/train_sessions.csv', sep=',')
     train_purchases_df = pd.read_csv(path_to_dataset + '/train_purchases.csv', sep=',')
-    test_sessions_df = pd.read_csv(path_to_dataset + '/test_leaderboard_sessions.csv', sep=',')
     candidate_items_df = pd.read_csv(path_to_dataset + '/candidate_items.csv', sep=',')
+    if final:
+        test_sessions_df = pd.read_csv(path_to_dataset + '/test_final_sessions.csv', sep=',')
+    else:
+        test_sessions_df = pd.read_csv(path_to_dataset + '/test_leaderboard_sessions.csv', sep=',')
     print('CSVs read')
 
     return item_features_df, train_sessions_df, train_purchases_df, test_sessions_df, candidate_items_df
