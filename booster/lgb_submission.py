@@ -14,6 +14,7 @@ from RecSys_Course_AT_PoliMi.Recommenders.KNN.UserKNNCFRecommender import UserKN
 from RecSys_Course_AT_PoliMi.Recommenders.Neural.MultVAERecommender import MultVAERecommender_OptimizerMask
 from RecSys_Course_AT_PoliMi.Recommenders.Neural.RecVAERecommender import RecVAERecommender
 from RecSys_Course_AT_PoliMi.Recommenders.SessionBased.GRU4RecRecommender import GRU4RecRecommender
+from RecSys_Course_AT_PoliMi.Recommenders.GraphBased.RP3betaRecommender import RP3betaRecommender
 
 '''
 This script generates the candidates to be re-ranked, tunes the booster, and generates the submission csv
@@ -32,8 +33,8 @@ keep_unpredicted = False
 
 # SETUP
 model_classes = [EASE_R_Recommender, TopPop, GRU4RecRecommender, ItemKNN_CFCBF_Hybrid_Recommender,
-                 UserKNNCFRecommenderStackedXGBoost, RecVAERecommender, MultVAERecommender_OptimizerMask]
-is_content_based = [False, False, False, True, False, False, False]
+                 UserKNNCFRecommenderStackedXGBoost, RecVAERecommender, MultVAERecommender_OptimizerMask, RP3betaRecommender]
+is_content_based = [False, False, False, True, False, False, False, False]
 models_hyp = [
     # EASE_R_Recommender
     {'topK': None, 'normalize_matrix': False, 'l2_norm': 46.90311309040724},
@@ -48,7 +49,9 @@ models_hyp = [
     # RecVAE
     {'epochs': 16, 'hidden_dim': 512, 'latent_dim': 512, 'gamma': 0.002120200481439875, 'learning_rate': 0.0008527025871297427, 'batch_size': 8192, 'dropout': 0.44365543009435443, 'n_enc_epochs': 5, 'n_dec_epochs': 1},
     # MultVAE
-    {'epochs': 53, 'learning_rate': 0.00020953471872049278, 'l2_reg': 8.782615138235317e-06, 'dropout': 0.5565555861318344, 'total_anneal_steps': 244578, 'anneal_cap': 0.25108629040696107, 'batch_size': 128, 'encoding_size': 147, 'next_layer_size_multiplier': 2, 'max_n_hidden_layers': 2, 'max_parameters': 1750000000.0}
+    {'epochs': 53, 'learning_rate': 0.00020953471872049278, 'l2_reg': 8.782615138235317e-06, 'dropout': 0.5565555861318344, 'total_anneal_steps': 244578, 'anneal_cap': 0.25108629040696107, 'batch_size': 128, 'encoding_size': 147, 'next_layer_size_multiplier': 2, 'max_n_hidden_layers': 2, 'max_parameters': 1750000000.0},
+    # Rp3Beta
+    {'topK': 156, 'alpha': 0.9867577596015882, 'beta': 0.3006127016015112, 'normalize_similarity': True}
 ]
 
 URM_params = [
@@ -58,7 +61,8 @@ URM_params = [
     {'view_weight': 0.5, 'abs_half_life': 182, 'cyclic_decay': True},  # ItemKNN_CFBF
     {'view_weight': 0.2, 'abs_half_life': 182, 'cyclic_decay': True},  # UserKNN
     {'view_weight': 0.5, 'abs_half_life': 182, 'cyclic_decay': True},  # RecVAE
-    {'view_weight': 0.5, 'abs_half_life': 365}  # MultVAE
+    {'view_weight': 0.5, 'abs_half_life': 365},  # MultVAE
+    {'view_weight': 0.2}  # RP3Beta
 ]
 
 model_dict = {'model_classes': model_classes, 'models_hyp': models_hyp, 'is_content_based': is_content_based, 'URM_params' : URM_params}
