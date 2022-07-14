@@ -231,3 +231,5 @@ subs/
 *.h5
 Notebooks/attributes/session_embeddigs.csv
 
+.idea
+

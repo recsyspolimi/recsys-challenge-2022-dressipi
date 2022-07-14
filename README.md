@@ -49,7 +49,7 @@ enriched with the GRU4Rec implementation by [Theano](https://github.com/hidasib/
 
 * [optimizer_files](https://github.com/KingPowa/Rec_Sys_2022_Boston_Team/tree/main/optimizer_files), scripts based on Opuna or Bayesian Optimization used to perform hyperparameter tuning of the models involved in the candidate generation
 
-* [booster](https://github.com/KingPowa/Rec_Sys_2022_Boston_Team/tree/main/), scripts related to LightGBM, involving the creation of its dataset, the hyperparameter tuning and the inference
+* [booster](https://github.com/KingPowa/Rec_Sys_2022_Boston_Team/tree/main/booster), scripts related to LightGBM, involving the creation of its dataset, the hyperparameter tuning and the inference
 
 ## Paper
 
