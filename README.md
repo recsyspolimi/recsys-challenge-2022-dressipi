@@ -53,7 +53,7 @@ enriched with the GRU4Rec implementation by [Theano](https://github.com/hidasib/
 
 ## Paper
 
-It's available a [paper](https://github.com/KingPowa/Rec_Sys_2022_Boston_Team/tree/main/) based on our experience in the challenge, describing our discoveries and implementation choices.
+It's available a [paper](https://github.com/KingPowa/Rec_Sys_2022_Boston_Team/blob/main/Paper%20RecSys%20Challenge%202022%20Polimi.pdf) based on our experience in the challenge, describing our discoveries and implementation choices.
 
 ## Results
 
